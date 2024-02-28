@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skater Republic</title>
+  <style>
+    /* Style the logo and navigation bar */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f0f0f0;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* Style the about us section */
+#about-us {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#about-us video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#about-us .content {
+  position: relative;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+#about-us h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#about-us p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+#about-us img {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+#about-us a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#about-us a:hover {
+  opacity: 0.8;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Skater Republic</a>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Media</a>
+      <a href="#">News</a>
+      <a href="#">Purchase</a>
+      <a href="#">Social Media</a>
+      <a href="#">Contact Us</a>
+    </nav>
+  </header>
+
+  <section id="about-us">
+    <video autoplay loop muted playsinline>
+      <source src="path/to/trailer.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+      <h1>Skater Republic</h1>
+      <p>
+        (About Us Text)
+      </p>
+      <img src="screenshot1.jpg" alt="Skater Republic Screenshot">
+      <a href="#">Sign up for updates</a>
+    </div>
+  </section>
+
+  <script>
+    // Here's an example using ScrollMagic for the parallax effect (replace with your implementation)
+const controller = new ScrollMagic.Controller();
+
+const scene = new ScrollMagic.Scene({
+  triggerElement: "#about-us",
+  triggerHook: 0.7,
+  duration: "100%"
+})
+.setTween(new ScrollMagic.TweenMax.to("#about-us .content", 1, { translateY: "100px" }))
+.addTo(controller);
+
+  </script>
+</body>
+</html>
