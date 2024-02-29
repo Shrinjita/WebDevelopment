@@ -1,0 +1,188 @@
+/* Resetting default margin and padding */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Set background color */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+}
+
+/* Logo Styling */
+.logo-container {
+    position: absolute;
+    top: 18px; /* Adjust as needed */
+    left: 18px; /* Adjust as needed */
+}
+
+.logo {
+    width: 15%; /* Adjust the width as needed */
+    max-width: 50%;
+    display: block;
+}
+
+/* Hamburger Icon Styling */
+.hamburger-container {
+    position: fixed; /* Set position fixed for fixed positioning */
+    top: 20px; /* Adjust top position as needed */
+    right: 20px; /* Adjust right position as needed */
+    z-index: 999; /* Set z-index to ensure it appears above other content */
+}
+
+.hamburger {
+    width: 30px; /* Adjust the width and height as needed */
+    height: 3px;
+    background-color: #fff; /* White color */
+    cursor: pointer;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 30px; /* Adjust the width and height as needed */
+    height: 3px;
+    background-color: #fff; /* White color */
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -10px;
+}
+
+.hamburger::after {
+    bottom: -10px;
+}
+
+/* Sidebar Navigation Styling */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0; /* Sidebar opens from the right */
+    background-color: #000; /* Updated to match main background */
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: 0.5s;
+}
+
+.sidebar.open {
+    width: 250px;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 15px;
+}
+
+.sidebar nav ul li a {
+    color: #7fff00; /* Same green as main page */
+    text-decoration: none;
+}
+
+.sidebar nav ul li a:hover {
+    color: #fff; /* Hover color */
+}
+
+/* Main Content Styling */
+.main-content {
+    text-align: center; /* Center-align all text */
+}
+
+/* All Font Color to Neon Green */
+body, 
+header,
+h1, 
+p, 
+button,
+footer,
+.sidebar nav ul li a {
+    color: #7fff00;
+    font-family: Poppins, sans-serif;
+}
+/* Main Content Centering */
+.main-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: calc(100vh - 100px); /* Set minimum height to 100% of the viewport height minus footer height */
+    padding: 50px; /* Add padding around the main content */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    text-align: center; /* Center text inside main content */
+    position: relative; /* Set position to relative */
+    z-index: 1; /* Set z-index higher than footer */
+    margin-bottom: 20px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center; /* Center-align all content */
+    margin-top: 50px; /* Add top margin for spacing */
+    background-color: #8080802a; /* Grey color */
+    color: #fff; /* White text color */
+    padding: 20px; /* Add padding to the footer */
+    position: fixed; /* Set position to fixed */
+    bottom: 0; /* Align footer to bottom of the viewport */
+    width: 100%; /* Set width to 100% of the viewport */
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+footer p {
+    margin: 10px 0; /* Add margin above and below paragraphs */
+}
+
+.social-media-icons {
+    margin-top: 20px; /* Add top margin for spacing */
+}
+
+.social-media-icons a {
+    margin: 0 10px; /* Add horizontal margin between social media icons */
+}
+
+.social-media-icons img {
+    width: 30px; /* Set the width of social media icons */
+    height: 30px; /* Set the height of social media icons */
+}
+/* Sidebar Navigation Styling */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0; /* Sidebar opens from the right */
+    background-color: rgba(0, 0, 0, 0.9); /* Updated to fully opaque black */
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: 0.5s;
+    z-index: 100; /* Ensure sidebar appears above main content */
+}
+
+
+/* Create pseudo-element for each line */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50vh; /* Start above the viewport */
+    left: 0;
+    width: 1px; /* Width of the line */
+    height: 100vh; /* Height of the line */
+    background-color: #7fff00; /* Green color */
+    animation: animateLines 10s linear infinite; /* Adjust animation duration and timing as needed */
+}
+
+/* Generate multiple lines */
+body::after {
+    content: '';
+    position: fixed;
+    top: -50vh; /* Start above the viewport */
+    left: 0;
+    width: 1px; /* Width of the line */
+    height: 100vh; /* Height of the line */
+    background-color: #7fff00; /* Green color */
+    animation: animateLines 15s linear infinite; /* Adjust animation duration and timing as needed */
+    transform: translateX(20%); /* Adjust horizontal position */
+}
+

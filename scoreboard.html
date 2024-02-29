@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recruitment-CTF'24</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      color: green;
+      background-color: black;
+    }
+    footer.footer {
+      background-color: grey;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">Recruitment-CTF'24</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#base-navbars" aria-controls="base-navbars" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="base-navbars">
+      
+        <ul class="navbar-nav ml-md-auto">
+          <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main role="main">
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Scoreboard</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div id="score-graph" class="row d-flex align-items-center">
+        <div class="col-md-12 text-center">
+          <i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
+        </div>
+      </div>
+      <div id="scoreboard" class="row">
+        <div class="col-md-12">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Place</th>
+                <th scope="col">User</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-center">1</th>
+                <td><a href="/users/46">utkarsh_jaiswal</a></td>
+                <td>3158</td>
+              </tr>
+              <!-- Truncated for brevity -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer bg-secondary text-green">
+    <div class="container text-center">
+      <small>Powered by HTBSRMIST</small>
+    </div>
+  </footer>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
