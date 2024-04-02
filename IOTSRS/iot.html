@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IoT Smart Room Simulation</title>
+<style>
+    /* CSS for styling */
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .canvas-container {
+        width: 800px;
+        height: 600px;
+        border: 2px solid #ccc;
+        position: relative;
+    }
+    .draggable-item {
+        width: 50px;
+        height: 50px;
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+        position: absolute;
+        cursor: move;
+    }
+</style>
+</head>
+<body>
+    <h1>IoT Smart Room Simulation</h1>
+    <div class="canvas-container" id="canvasContainer">
+        <!-- This is the blank canvas where objects will be dragged and dropped -->
+    </div>
+
+    <script>
+        // JavaScript for drag and drop functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('canvasContainer');
+
+            // Function to create draggable elements
+            function createDraggableElement() {
+                const draggableElement = document.createElement('div');
+                draggableElement.classList.add('draggable-item');
+                draggableElement.textContent = 'Object';
+                draggableElement.draggable = true;
+                draggableElement.style.left = '50px';
+                draggableElement.style.top = '50px';
+
+                // Event listeners for drag and drop
+                draggableElement.addEventListener('dragstart', (event) => {
+                    event.dataTransfer.setData('text/plain', draggableElement.id);
+                });
+
+                canvas.appendChild(draggableElement);
+            }
+
+            // Create draggable elements on page load
+            createDraggableElement();
+
+            // Function to handle dropping of elements
+            canvas.addEventListener('drop', (event) => {
+                event.preventDefault();
+                const data = event.dataTransfer.getData('text/plain');
+                const droppedElement = document.getElementById(data);
+
+                // Check if the dropped element is within the canvas
+                if (canvas.contains(droppedElement)) {
+                    droppedElement.style.left = `${event.clientX - canvas.getBoundingClientRect().left - droppedElement.clientWidth / 2}px`;
+                    droppedElement.style.top = `${event.clientY - canvas.getBoundingClientRect().top - droppedElement.clientHeight / 2}px`;
+
+                    // Simulate object detection logic (Example: change color when detected)
+                    droppedElement.style.backgroundColor = '#27ae60';
+                    setTimeout(() => {
+                        droppedElement.style.backgroundColor = '#3498db';
+                    }, 2000); // Reset color after 2 seconds
+                }
+            });
+
+            canvas.addEventListener('dragover', (event) => {
+                event.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>

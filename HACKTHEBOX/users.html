@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recruitment-CTF'24</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: black;
+      color: #00FF00; /* Green font color */
+    }
+    .form-control {
+      background-color: white;
+      color: black; /* Black text color */
+    }
+  </style>
+<header class="bg-black text-green py-4">
+  <div class="container text-center">
+    <h1>Users</h1>
+  </div>
+</header>
+
+<main role="main" style="background-color: black;">
+  <div class="container mt-4">
+    <form method="GET" class="form-inline">
+      <div class="form-group col-md-8">
+        <input class="form-control w-100" id="q" name="q" placeholder="Search for matching users" required type="text" value>
+      </div>
+      <div class="form-group col-md-4">
+        <button type="submit" class="btn btn-success w-100">Search</button>
+      </div>
+    </form>
+    
+  </div>
+</main>
+<div id="users-container" class="container mt-4" style="color: green;"></div>
+
+<footer class="footer fixed-bottom bg-secondary text-green">
+  <div class="container text-center">
+    <small>Powered by HTBSRMIST</small>
+  </div>
+</footer>
+
+<script>
+  // Example JSON data
+  var usersData = [
+    { "id": 1, "name": "John", "age": 30 },
+    { "id": 2, "name": "Jane", "age": 25 },
+    { "id": 3, "name": "Bob", "age": 35 }
+  ];
+
+  // Function to render users data
+  function renderUsers(users) {
+    var container = document.getElementById("users-container");
+    container.innerHTML = ""; // Clear previous content
+
+    users.forEach(function(user) {
+      var userDiv = document.createElement("div");
+      userDiv.innerHTML = "<p>ID: " + user.id + "</p>" +
+                          "<p>Name: " + user.name + "</p>" +
+                          "<p>Age: " + user.age + "</p>";
+      container.appendChild(userDiv);
+    });
+  }
+
+  // Initial rendering
+  renderUsers(usersData);
+</script>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
